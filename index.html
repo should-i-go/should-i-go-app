@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <pre id = "events-csv"></pre>
+    <script>
+    	$.ajax('/should-i-go-data/events.csv', function (result) {
+      	console.log(result);
+      })
+    </script>
+  </body>
+</html>
