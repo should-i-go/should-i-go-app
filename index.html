@@ -4,11 +4,15 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   </head>
   <body>
+    <p>If data loads successfully, you will see a csv of events below.</p>
     <pre id = "events-csv"></pre>
     <script>
-    	$.ajax('/should-i-go-data/events.csv', function (result) {
-      	console.log(result);
-      })
+      var eventsCsvUrl = '/should-i-go-data/events.csv'; 
+      console.log('Loading:', eventsCsvUrl);
+      $.ajax({ url: eventsCsvUrl }).done(function (data) { 
+        console.log('Received:', data);
+        $('#events-csv').html(data); 
+      });
     </script>
   </body>
 </html>
